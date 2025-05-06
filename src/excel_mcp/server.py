@@ -495,7 +495,7 @@ async def run_server():
     """Run the Excel MCP server."""
     try:
         logger.info(f"Starting Excel MCP server (files directory: {EXCEL_FILES_PATH})")
-        await mcp.run_sse_async()
+        await mcp.run_stdio_async()  # mcp.run_sse_async()
     except KeyboardInterrupt:
         logger.info("Server stopped by user")
         await mcp.shutdown()
